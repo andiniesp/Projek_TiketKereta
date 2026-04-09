@@ -31,10 +31,6 @@ public class KAEksekutif extends Kendaraan implements Booking {
         return true;
     }
 
-    // Implementasi dari Interface Booking 
-    @Override
-    public boolean batalkan(String kodeBooking) {
-        System.out.println("Tiket " + kodeBooking + " dibatalkan!");
-        return true;
-    }
+
+    
 }

@@ -33,9 +33,4 @@ public class KAEkonomi  extends Kendaraan implements Booking {
         return true;
     }
 
-    @Override
-    public boolean batalkan(String kodeBooking) {
-        System.out.println("Tiket " + kodeBooking + " dibatalkan!");
-        return true;
-    }
 }
