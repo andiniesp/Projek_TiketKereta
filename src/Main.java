@@ -29,12 +29,14 @@ public class Main {
         Penumpang p1 = new Penumpang("Budi Santoso", "3201234567", "081234567890");
         Penumpang p2 = new Penumpang("Siti Rahayu", "3209876543", "089876543210");
 
-        System.out.println("\n-- Pemesanan Tiket --");
+        try {
 
+        System.out.println("\n-- Pemesanan Tiket --");
         System.out.println("\nPilih kereta untuk " + p1.getNama() + " (masukkan nomor 1-" + daftarKereta.size() + "):");
         for (int i = 0; i < daftarKereta.size(); i++) {
             System.out.println((i + 1) + ". " + daftarKereta.get(i).getNama());
         }
+
         int pilihanP1 = scanner.nextInt() - 1;
         System.out.print("Masukkan nomor kursi: ");
         String kursiP1 = scanner.next();
@@ -53,7 +55,16 @@ public class Main {
 
         Kendaraan keretaP2 = daftarKereta.get(pilihanP2); 
         ((interfaceabstract.Booking) keretaP2).pesan(p2.getNama(), kursiP2);
+ 
+        } catch (Exception e) {
+            System.out.println("salah input, cilahkan coba lagi \n" +  e. getMessage());
+            // TODO: handle exception
 
-        scanner.close();
+        } finally {
+            scanner.close();
+            System.out.println("program selesai");
+        }
+    
+        
     }
 }
